@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	div(class="container")
+		h1(class="loginheader" style="font-family: Menlo, Andale Mono, monospace; font-weight: 300")
+		h1(class="loginheader" style="font-family: Menlo, Andale Mono, monospace; font-weight: 300; margin-top: 300px; font-size: 50px;") #{moment(Date.now()).format('DD MMMM YYYY')}
+		h1(class="loginheader" id="timer" style="font-family: Menlo, Andale Mono, monospace; font-weight: 300; margin-top: 0px; margin-bottom: 50px; font-size: 50px;") #{moment(Date.now()).format('HH:mm:ss')}
+		form(method='post', action='/setscore', autocomplete="off")
+			input(class="submit" type="submit", value="Still Awake?")
+
+	script(src='js/jquery-3.2.1.js')
+
+	script.
+		$(document).ready(function(){
+			function update() {
+				console.log("hey")
+				$("#timer").text(new Date(new Date().getTime()).toLocaleTimeString())
+				setTimeout(update, 1000)	
+			}	
+			update()	
+		})
+	

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	div(class="container")
+		h1(class="loginheader") Register to Insomnia!
+		form(method='post', action='/register', autocomplete="off")
+			div(class="icon1")
+				input(class="login", type="text", name="username", placeholder="username")
+				br
+			div(class="icon2")
+				input(class="login", type="password", name="password", placeholder="password")
+				br
+			div(class="icon1")
+				input(class="login", type="text", name="email", placeholder="email")
+				br
+			input(class="submit" type="submit", value="Register")

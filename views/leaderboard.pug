@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div(class="container")
+    table
+      thead
+        tr: th Username
+          th Score
+      tbody
+        each user in users
+          tr: td #{user.username}
+            if user.scores.length !== 0
+                //- td #{JSON.stringify(user)}
+                td #{user.scores[0].score}
